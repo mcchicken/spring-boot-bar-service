@@ -22,11 +22,12 @@ public class UntappdSpringClient {
     }
 
     public int fetchCheckins(String username) {
-        String url = untappdUrl + "/user/info/" + username +"?client_id={client_id}&client_secret={client_secret}";
+        String url = untappdUrl + "/user/info/{username}?client_id={client_id}&client_secret={client_secret}";
         User user = restTemplate.exchange(url,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<Response<UserResponse>>(){},
+                username,
                 clientId,
                 clientSecret).getBody().getResponse().getUser();
         return user.getStats().getTotal_beers();
