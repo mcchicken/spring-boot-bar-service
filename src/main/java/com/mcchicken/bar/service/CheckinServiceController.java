@@ -1,6 +1,6 @@
 package com.mcchicken.bar.service;
 
-import com.mcchicken.bar.client.UntappdSpringClient;
+import com.mcchicken.bar.client.UntappdCheckinRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CheckinServiceController {
-    private final UntappdSpringClient client;
+    private final UntappdCheckinRetrievalService client;
 
     @Autowired
-    public CheckinServiceController(UntappdSpringClient client) {
+    public CheckinServiceController(UntappdCheckinRetrievalService client) {
         this.client = client;
     }
 

@@ -1,12 +1,12 @@
 package it.com.mcchicken.bar;
 
-import com.mcchicken.bar.client.UntappdSpringClient;
+import com.mcchicken.bar.client.UntappdCheckinRetrievalService;
 import com.mcchicken.bar.service.CheckinServiceController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -18,12 +18,13 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @WebAppConfiguration
 public class CheckinServiceIT {
     private MockMvc mockMvc;
 
-    @Mock UntappdSpringClient client;
+    @Mock
+    UntappdCheckinRetrievalService client;
 
     @Before
     public void setup() {

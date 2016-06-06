@@ -5,15 +5,14 @@ import com.mcchicken.bar.domain.untappd.response.Response;
 import com.mcchicken.bar.domain.untappd.response.UserResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.StringJoiner;
 
-@Component
-public class UntappdSpringClient {
+@Service
+public class UntappdCheckinRetrievalService {
     @Value("${client_id}") private String clientId;
     @Value("${client_secret}") private String clientSecret;
     @Value("${untappd.api.url}") private String untappdApi;
@@ -21,7 +20,7 @@ public class UntappdSpringClient {
 
     private final RestTemplate restTemplate;
 
-    public UntappdSpringClient() {
+    public UntappdCheckinRetrievalService() {
         this.restTemplate = new RestTemplate();
     }
 
