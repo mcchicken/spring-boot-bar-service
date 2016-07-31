@@ -1,4 +1,4 @@
-package com.mcchicken.bar.domain.untappd.response;
+package com.mcchicken.bar.untappd.response;
 
 public class Response<T> {
     private final T response;

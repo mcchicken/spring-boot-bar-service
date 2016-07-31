@@ -1,6 +1,6 @@
 package it.com.mcchicken.bar;
 
-import com.mcchicken.bar.client.UntappdCheckinRetrievalService;
+import com.mcchicken.bar.untappd.service.CheckinRetrievalService;
 import com.mcchicken.bar.service.CheckinServiceController;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,21 +24,13 @@ public class CheckinServiceIT {
     private MockMvc mockMvc;
 
     @Mock
-    UntappdCheckinRetrievalService client;
+    CheckinRetrievalService client;
 
     @Before
     public void setup() {
         mockMvc = standaloneSetup(new CheckinServiceController(client)).build();
 
         when(client.fetchCheckins(anyString())).thenReturn(42);
-        when(client.toString()).thenReturn("Hi mom");
-    }
-
-    @Test
-    public void rootEndpointIsAvailable() throws Exception {
-        MvcResult result = mockMvc.perform(get("/")).andReturn();
-
-        assertThat(result.getResponse().getContentAsString(), is("Hi mom"));
     }
 
     @Test

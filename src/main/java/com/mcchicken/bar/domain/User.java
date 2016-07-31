@@ -1,4 +1,4 @@
-package com.mcchicken.bar.domain.nixietube;
+package com.mcchicken.bar.domain;
 
 public class User {
     //TODO: map untappd user fields over

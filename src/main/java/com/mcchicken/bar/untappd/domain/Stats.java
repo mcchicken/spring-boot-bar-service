@@ -1,4 +1,4 @@
-package com.mcchicken.bar.domain.untappd;
+package com.mcchicken.bar.untappd.domain;
 
 public class Stats {
     private int total_badges;

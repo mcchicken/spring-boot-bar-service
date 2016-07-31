@@ -1,6 +1,6 @@
-package com.mcchicken.bar.domain.untappd.response;
+package com.mcchicken.bar.untappd.response;
 
-import com.mcchicken.bar.domain.untappd.User;
+import com.mcchicken.bar.untappd.domain.User;
 
 public class UserResponse {
     private final User user;

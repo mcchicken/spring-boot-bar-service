@@ -1,0 +1,2 @@
+FROM debian
+CMD ["java checkin-rest-service-1.0-SNAPSHOT"]
