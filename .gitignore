@@ -38,4 +38,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-docker/container_settings.json
+src/main/docker/container_settings.json
