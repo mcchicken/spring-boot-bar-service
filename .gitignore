@@ -17,6 +17,7 @@ buildNumber.properties
 # User-specific stuff:
 .idea
 *.iml
+*.log
 
 ## File-based project format:
 *.iws

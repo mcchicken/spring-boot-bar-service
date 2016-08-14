@@ -23,7 +23,7 @@ public class BeerCheckinScheduledTask {
     }
 
     private int getUniqueBeersFor(String username) {
-        return restTemplate().exchange("http://localhost:8080/checkins/{username}",
+        return restTemplate().exchange("http://localhost:8080/beers/{username}",
                                         HttpMethod.GET,
                                         null,
                                         new ParameterizedTypeReference<Integer>(){},

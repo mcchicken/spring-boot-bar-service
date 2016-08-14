@@ -3,6 +3,7 @@ package com.mcchicken.bar.service;
 import com.mcchicken.bar.domain.User;
 import com.mcchicken.bar.untappd.service.CheckinRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,11 +23,13 @@ public class CheckinServiceController {
         this.users = new ConcurrentHashMap<>();
     }
 
+    @Cacheable("checkins")
     @RequestMapping("/checkins/{username}")
     public int checkins(@PathVariable("username") String username) {
         return client.fetchCheckins(username);
     }
 
+    @Cacheable("beers")
     @RequestMapping("/beers/{username}")
     public int beers(@PathVariable("username") String username) {
         return client.fetchUniqueBeers(username);
